@@ -20,6 +20,7 @@ var config = {
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
         ],
+        images: './src/images/*',
         dist: './dist',
         mainJs: './src/main.js'
     }
@@ -65,10 +66,19 @@ gulp.task('css', () => {
         .pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
+gulp.task('images', () => {
+    gulp.src(config.paths.images)
+        .pipe(gulp.dest(config.paths.dist + '/images'));
+
+    // extra favicon
+    gulp.src('./src/favicon.ico')
+        .pipe(gulp.dest(config.paths.dist));
+});
+
 // Watches changes in the html folder
 gulp.task('watch', () => {
     gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.js, ['js']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'images', 'open', 'watch']);
