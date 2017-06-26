@@ -2,12 +2,12 @@
 
 // Dependencies
 var gulp = require('gulp');
-var connect = require('gulp-connect'); // Run a local dev server
-var open = require('gulp-open'); // open a url in a web browser
-var browserify = require('browserify'); // Bundles js files
-var reactify = require('reactify'); // Transforms React JSX to JS
-var source = require('vinyl-source-stream'); // Use conventional text streams with gulp
-var concat = require('gulp-concat'); // Concatenates files
+var connect = require('gulp-connect');          // Run a local dev server
+var open = require('gulp-open');                // open a url in a web browser
+var browserify = require('browserify');         // Bundles js files
+var reactify = require('reactify');             // Transforms React JSX to JS
+var source = require('vinyl-source-stream');    // Use conventional text streams with gulp
+var concat = require('gulp-concat');            // Concatenates files
 
 // Default config
 var config = {
