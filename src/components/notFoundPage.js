@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Router = require('react-router');
+var Link = Router.Link;
 
 var NotFoundPage = React.createClass({
     render(){
