@@ -4,6 +4,6 @@ var Router = require('react-router');
 $ = jQuery = require('jquery');
 
 // Routing code
-Router.run(routes, (Handler) => {
+Router.run(routes, Router.HistoryLocation, (Handler) => {
     React.render(<Handler />, document.getElementById('app'));
 });
