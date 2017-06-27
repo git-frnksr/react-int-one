@@ -1,45 +1,28 @@
 "use strict";
 
 var React = require('react');
+var AuthorList = require('./authorList');
 var authorApi = require('../../api/authorApi');
 
-var Authors = React.createClass({
+var AuthorPage = React.createClass({
     getInitialState: function(){
         return {
             authors: []
         };
     },  
-
-    componentWillMount: function(){
+    componentDidMount: function(){
+       if(this.isMounted()){
         this.setState({ authors: authorApi.getAllAuthors() });
+       } 
     },
-
     render(){
-
-        var createAuthorRow = function(author){
-            return (
-                <tr key={author.id}>
-                    <td><a href={"/#authors/" + author.id}>{author.id}</a></td>
-                    <td>{author.firstName} {author.lastName}</td>
-                </tr>
-            );
-        }
-
         return(
             <div>
                 <h1>Authors</h1>
-                <table className="table">
-                    <thead>
-                        <th>ID</th>
-                        <th>Name</th>
-                    </thead>
-                    <tbody>
-                        {this.state.authors.map(createAuthorRow, this)}
-                    </tbody>
-                </table>
+                <AuthorList authors={this.state.authors}/>
             </div>
         );
     }
 });
 
-module.exports = Authors;
+module.exports = AuthorPage;
