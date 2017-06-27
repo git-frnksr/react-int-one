@@ -47366,7 +47366,7 @@ var AuthorList = React.createClass({displayName: "AuthorList",
                     React.createElement("td", null, author.firstName, " ", author.lastName)
                 )
             );
-        }
+        };
 
         return(
             React.createElement("div", null, 
