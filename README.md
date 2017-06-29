@@ -1,2 +1,2 @@
-# react-int-one
-Learning React 1
+# React Intermediate Course 1
+Pluralsight Course: Building Applications with React and Flux - by Cory House

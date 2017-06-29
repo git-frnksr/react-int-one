@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var TextInput = require('../common/TextInput');
 
 var AuthorForm = React.createClass({
     render(){
@@ -8,25 +9,17 @@ var AuthorForm = React.createClass({
             <form>
                 <h1>Manage Author</h1>
 
-                <label htmlFor="firstName">First Name</label>
-                <input type="text" 
-                name="firstName" 
-                className="form-control"
-                placeholder="First Name"
-                ref="firstName"
-                onChange={this.props.onChange}
-                value ={this.props.author.firstName} />
-                <br/>
+                <TextInput
+                    name="firstName"
+                    label="First Name"
+                    value={this.props.author.firstName}
+                    onChange={this.props.onChange} />
 
-                <label htmlFor="lastName">Last Name</label>
-                <input type="text" 
-                name="lastName" 
-                className="form-control"
-                placeholder="Last Name"
-                ref="lastName"
-                onChange={this.props.onChange}
-                value ={this.props.author.lastName} />
-                <br/>
+                <TextInput
+                    name="lastName"
+                    label="Last Name"
+                    value={this.props.author.lastName}
+                    onChange={this.props.onChange} />
                 
                 <input type="submit" value="Save" className="btn btn-default" />
             </form>
